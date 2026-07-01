@@ -40,7 +40,7 @@ class ApiController extends Controller
 
         return response()->json([
             'topic' =>  new TopicResource($topic) , 
-            'topics' =>  TopicResource::collection($topics) , 
+            'related_topics' =>  TopicResource::collection($topics) , 
             'categories' =>  CategoryResource::collection($categories) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);
