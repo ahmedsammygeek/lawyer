@@ -23,45 +23,34 @@ use App\Http\Controllers\Board\CertificateController;
 use App\Http\Controllers\Board\ProjectReservationController;
 use App\Http\Controllers\Board\ProjectMessageController;
 
-Route::get('test' , function(){
+Route::get('/' , function(){
 
-
-	// $checkin_date = '2024-01-05';
-	// $checkout_date = '2024-01-07';
-
-
-
-	// $reservedCount = App\Models\ProjectReservation::where('project_id' , 17 )
-	// ->whereDate('start_date',  '<=', $checkout_date )
-	// ->whereDate('end_date',  '>=', $checkin_date)
-	// ->count();
-
-	// dd($reservedCount);
+	return view('welcome');
 });
 
-Route::group(
-	[
-		'prefix' => LaravelLocalization::setLocale(),
-		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-	], function(){ 
-		Route::get('/', [SiteController::class , 'index' ] )->name('index');
-		Route::get('/about', [SiteController::class , 'about' ] )->name('about');
-		Route::get('/services', [SiteController::class , 'services' ] )->name('services.index');
-		Route::get('/projects', [SiteController::class , 'projects' ] )->name('projects.index');
-		Route::get('/blog', [SiteController::class , 'topics' ] )->name('topics.index');
-		Route::get('/offers', [SiteController::class , 'offers' ] )->name('offers');
-		Route::get('/contact', [SiteController::class , 'contact' ] )->name('contact');
-		Route::get('/blog/{topic}', [SiteController::class , 'show_topic' ] )->name('topics.show');
-		Route::get('/services/{service}', [SiteController::class , 'show_service' ] )->name('services.show');
-		Route::get('/projects/{project}', [SiteController::class , 'show_project' ] )->name('projects.show');
-		Route::get('/privacy', [SiteController::class , 'privacy' ] )->name('privacy');
-		Route::post('/send'  , [SiteController::class , 'send'] )->name('contact.send');
-		Route::get('/shop'  , [SiteController::class , 'shop'] )->name('shop.index');
-		Route::get('/shop/{product}'  , [SiteController::class , 'show_product'] )->name('products.show');
-		Route::get('/shop/{product}/order'  , [SiteController::class , 'order'] )->name('products.order');
-		Route::post('/shop/{product}/order'  , [SiteController::class , 'store_order'] )->name('products.order.store');
-		Route::get('/covering'  , [SiteController::class , 'covering'] )->name('covering.index');
-	});
+// Route::group(
+// 	[
+// 		'prefix' => LaravelLocalization::setLocale(),
+// 		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+// 	], function(){ 
+// 		Route::get('/', [SiteController::class , 'index' ] )->name('index');
+// 		Route::get('/about', [SiteController::class , 'about' ] )->name('about');
+// 		Route::get('/services', [SiteController::class , 'services' ] )->name('services.index');
+// 		Route::get('/projects', [SiteController::class , 'projects' ] )->name('projects.index');
+// 		Route::get('/blog', [SiteController::class , 'topics' ] )->name('topics.index');
+// 		Route::get('/offers', [SiteController::class , 'offers' ] )->name('offers');
+// 		Route::get('/contact', [SiteController::class , 'contact' ] )->name('contact');
+// 		Route::get('/blog/{topic}', [SiteController::class , 'show_topic' ] )->name('topics.show');
+// 		Route::get('/services/{service}', [SiteController::class , 'show_service' ] )->name('services.show');
+// 		Route::get('/projects/{project}', [SiteController::class , 'show_project' ] )->name('projects.show');
+// 		Route::get('/privacy', [SiteController::class , 'privacy' ] )->name('privacy');
+// 		Route::post('/send'  , [SiteController::class , 'send'] )->name('contact.send');
+// 		Route::get('/shop'  , [SiteController::class , 'shop'] )->name('shop.index');
+// 		Route::get('/shop/{product}'  , [SiteController::class , 'show_product'] )->name('products.show');
+// 		Route::get('/shop/{product}/order'  , [SiteController::class , 'order'] )->name('products.order');
+// 		Route::post('/shop/{product}/order'  , [SiteController::class , 'store_order'] )->name('products.order.store');
+// 		Route::get('/covering'  , [SiteController::class , 'covering'] )->name('covering.index');
+// 	});
 
 
 Route::get('Board/login' , [LoginController::class , 'form' ] )->name('board.login.form');
