@@ -10,9 +10,7 @@ Route::group(['prefix' => '/v1'], function() {
     
     Route::get('/home' , [ApiController::class , 'home'] );
     Route::get('/topics' , [ApiController::class , 'topics'] );
-    // Route::get('/home' , [ApiController::class , 'home'] );
-    // Route::get('/home' , [ApiController::class , 'home'] );
-    // Route::get('/home' , [ApiController::class , 'home'] );
-    // Route::get('/home' , [ApiController::class , 'home'] );
+    Route::get('/topics/{topic}' , [ApiController::class , 'show_topic'] );
+
 
 });

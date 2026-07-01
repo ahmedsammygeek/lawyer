@@ -31,5 +31,21 @@ class ApiController extends Controller
 
     }
 
+
+    public function show_topic(Request $request , Topic $topic )
+    {
+        $categories = Category::get();
+        $topics = Topic::where('id' , '!=' , $topic->id )->inRandomOrder()->limit(5)->get();
+
+
+        return response()->json([
+            'topic' =>  new TopicResource($topic) , 
+            'topics' =>  TopicResource::collection($topics) , 
+            'categories' =>  CategoryResource::collection($categories) , 
+            'informations' =>  new SettingResource('d') , 
+        ], 200);
+
+    }
+
    
 }
