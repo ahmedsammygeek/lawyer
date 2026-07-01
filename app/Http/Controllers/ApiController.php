@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Setting , Category , Topic};
 use App\Http\Resources\{SettingResource , CategoryResource , TopicResource};
+
+use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
 {
     /**
@@ -45,6 +47,20 @@ class ApiController extends Controller
             'informations' =>  new SettingResource('d') , 
         ], 200);
 
+    }
+
+
+    public function contact_us(Request $request )
+    {
+        return response()->json([
+            'informations' =>  new SettingResource('d') , 
+        ], 200);
+    }
+
+    public function send_email(SendEmailRequest $request )
+    {
+        
+        return response()->json( ['message' => 'تم استقبال رسالتك بنجاح'] ,  200);
     }
 
    

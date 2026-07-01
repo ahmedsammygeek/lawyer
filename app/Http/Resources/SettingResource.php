@@ -18,6 +18,7 @@ class SettingResource extends JsonResource
             'phone' => '01000000000' , 
             'email' => 'info@email.com' , 
             'address' => 'الحى العشر بجوار كرفور المعادى' , 
+            'working_hours' => 'الحى العشر بجوار كرفور المعادى' , 
             'facebook' => 'https://www.facebook.com/' , 
             'instagram' => 'https://instagram.com/' , 
             'tiktok' => 'https://www.tiktok.com/' , 
