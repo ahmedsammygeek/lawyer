@@ -1,0 +1,100 @@
+
+/* main ar css */
+nav .nav-icons .lang img {
+    width: 30px;
+    height: 20px;
+}
+/* mobile nav */
+.mobile-nav ul{
+    text-align: right;
+}
+/* start css to the certificate section */
+@keyframes slidecerti{
+    0%{
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+}
+100%{
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+}
+/* about section */
+@keyframes iconshake{
+    100%{
+        transform: translateX(40px);
+        -webkit-transform: translateX(40px);
+        -moz-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        -o-transform: translateX(40px);
+        opacity: .5;
+}
+}
+.about .about-adv ul li i {
+    margin-left: 8px;
+}
+.about .about-adv .adv-item .icon{
+    margin-left: 10px;
+    margin-right: 0px;
+}
+/* slick slider */
+[dir='rtl'] .slick-next {
+    right: 55px; 
+}
+[dir='rtl'] .slick-prev {
+    right: -5px;
+}
+/* footer */
+footer h2{
+    text-align: right;
+}
+footer .adv li i , 
+footer .links li i{
+    margin-right: 0px;
+    margin-left: 10px;
+}
+footer .row:last-child a{
+    float: left;
+    margin-top: -10px;
+}
+
+/* about page */
+.why-us .why-us-box .inner-box .why-item {
+    border-right: 1px dashed #ccc;
+    border-left: none;
+}
+.why-us .why-us-box .inner-box .col-lg-4:first-child .why-item {
+    border-right: none; 
+}
+@media only screen and (max-width: 992px) {
+    .why-us .why-us-box .inner-box .why-item {
+        border-right: none;
+    }
+}
+/* contact page */
+.contact .info .info-box .info-item .icon {
+    margin-left: 15px;
+    margin-right: 0;
+}
+/* shop page */
+.shop .side-shop ul li a {
+    transform: translateX(19px);
+    -webkit-transform: translateX(19px);
+    -moz-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    -o-transform: translateX(19px);
+}
+.shop .popular .popular-item .img {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.shop .box .text-box li del, .shop .popular .popular-item del, .related-products .box li del {
+    color: #919090;
+    margin-right: 4px;
+}
