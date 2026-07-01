@@ -22,22 +22,19 @@ class UpdateSettingsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'site_name_ar' => 'nullable' , 
-            'site_name_en' => 'nullable' , 
+
             'email' => 'nullable|email' , 
             'mobile' => 'nullable' , 
-            'whatsapp' => 'nullable' , 
             'address_ar' => 'nullable' , 
-            'youtube' => 'nullable|url' , 
+            'address_en' => 'nullable' , 
             'facebook' => 'nullable|url' , 
             'twitter' => 'nullable|url' , 
             'instagram' => 'nullable|url' , 
+            'snap_chat' => 'nullable|url' , 
+            'tiktok' => 'nullable|url' , 
             'working_hours_ar' => 'nullable' , 
-            'snap_chat' => 'nullable' , 
-            'logo' => 'nullable|image' , 
-            'contact_banner' => 'nullable|image' , 
-            'shop_banner' => 'nullable|image' , 
-            'covering_banner' => 'nullable|image' , 
+            'working_hours_en' => 'nullable' , 
+
         ];
     }
 }

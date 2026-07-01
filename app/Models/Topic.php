@@ -19,9 +19,12 @@ class Topic extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
 
-    public function urlForSite()
+    public function category()
     {
-        return route('topics.show' , $this->id.'-'.str_replace(' ', '-', $this->title) );
+        return $this->belongsTo(Category::class , 'category_id' );
     }
+
+
 }

@@ -37,33 +37,8 @@
 								@enderror
 							</div>
 						</div>
-						<div class="mb-3">
-							<label class="form-label "> بانر contact us </label>
-							<div>
-								<input type="file" class="form-control @error('contact_banner') is-invalid @enderror " name='contact_banner'  >
-								@error('contact_banner')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label "> بانر shop </label>
-							<div>
-								<input type="file" class="form-control @error('shop_banner') is-invalid @enderror " name='shop_banner'  >
-								@error('shop_banner')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label "> بانر covering </label>
-							<div>
-								<input type="file" class="form-control @error('covering_banner') is-invalid @enderror " name='covering_banner'  >
-								@error('covering_banner')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
+
+
 						<div class="mb-3">
 							<label class="form-label required"> رقم التواصل </label>
 							<div>
@@ -73,24 +48,8 @@
 								@enderror
 							</div>
 						</div>
-						<div class="mb-3">
-							<label class="form-label required"> رقم whatsApp </label>
-							<div>
-								<input type="text" class="form-control @error('whatsapp') is-invalid @enderror " name='whatsapp' value="{{ $settings->whatsapp }}" >
-								@error('whatsapp')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label required"> رقم whatsApp 2 </label>
-							<div>
-								<input type="text" class="form-control @error('another_whatsapp') is-invalid @enderror " name='another_whatsapp' value="{{ $settings->another_whatsapp }}" >
-								@error('another_whatsapp')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
+		
+	
 
 						<div class="mb-3">
 							<label class="form-label required"> البريد الاكترونى </label>
@@ -102,31 +61,10 @@
 							</div>
 						</div>
 
-						<div class="mb-3">
-							<label class="form-label required"> اسم الموقع بالعربيه </label>
-							<div>
-								<input type="text" class="form-control @error('site_name_ar') is-invalid @enderror " name='site_name_ar' value="{{ $settings->getTranslation('site_name' , 'ar') }}" >
-								@error('site_name_ar')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-
-						<div class="mb-3">
-							<label class="form-label required"> اسم الموقع بالانجليزيه </label>
-							<div>
-								<input type="text" class="form-control @error('site_name_en') is-invalid @enderror " name='site_name_en' value="{{ $settings->getTranslation('site_name' , 'en') }}" >
-								@error('site_name_en')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-
-
 
 
 						<div class="mb-3">
-							<label class="form-label required"> عنوان المقر  </label>
+							<label class="form-label required"> عنوان المقر بالعربيه  </label>
 							<div>
 								<input type="text" class="form-control @error('address_ar') is-invalid @enderror " name='address_ar' value="{{ $settings->getTranslation('address' , 'ar') }}" >
 								@error('address_ar')
@@ -136,17 +74,18 @@
 						</div>
 
 
-
-
 						<div class="mb-3">
-							<label class="form-label required"> مواعيد العمل  </label>
+							<label class="form-label required"> عنوان المقر بالانجليزيه  </label>
 							<div>
-								<input type="text" class="form-control @error('working_hours_ar') is-invalid @enderror " name='working_hours_ar' value="{{ $settings->getTranslation('working_hours' , 'ar') }}" >
-								@error('working_hours_ar')
+								<input type="text" class="form-control @error('address_en') is-invalid @enderror " name='address_en' value="{{ $settings->getTranslation('address' , 'ar') }}" >
+								@error('address_en')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
 							</div>
 						</div>
+
+
+
 
 
 
