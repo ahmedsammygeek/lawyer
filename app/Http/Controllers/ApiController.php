@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Setting , Category , Topic};
-use App\Http\Resources\{SettingResource , CategoryResource , TopicResource};
+use App\Models\{Setting , Category , Topic , Service};
+use App\Http\Resources\{SettingResource , CategoryResource , TopicResource , ServiceResource};
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
@@ -14,7 +14,12 @@ class ApiController extends Controller
      */
     public function home(Request $request)
     {
+
+
+        $services = Service::where('is_active' , 1)->get();
+
         return response()->json([
+            'services' => ServiceResource::collection($services) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);
     }

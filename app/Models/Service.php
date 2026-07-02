@@ -10,7 +10,7 @@ class Service extends Model
     use HasFactory;
     use HasTranslations;
 
-    public $translatable = ['name' , 'subtitle' , 'content'];
+    public $translatable = ['name' , 'content'];
 
 
 
