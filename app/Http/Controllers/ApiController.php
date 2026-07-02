@@ -26,7 +26,7 @@ class ApiController extends Controller
             'case_steps' => CaseStepResource::collection($steps) , 
             'case_steps' => CaseStepResource::collection($steps) , 
             'goals' => GoalResource::collection($goals) , 
-            'topics' => TopicResource::collection($goals) , 
+            'topics' => TopicResource::collection($topics) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);
     }
