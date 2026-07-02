@@ -6,7 +6,7 @@ use App\Http\Controllers\ApiController;
 
 
 
-Route::group(['prefix' => '/v1'], function() {
+Route::group(['prefix' => '/v1' , 'middleware' => ['set_local'] ], function() {
     
     Route::get('/home' , [ApiController::class , 'home'] );
     Route::get('/topics' , [ApiController::class , 'topics'] );
