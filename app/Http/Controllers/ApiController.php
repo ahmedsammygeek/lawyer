@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Setting , Category , About , Topic , CaseStep , Goal , Service};
-use App\Http\Resources\{SettingResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource};
+use App\Http\Resources\{SettingResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource};
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
@@ -35,7 +35,7 @@ class ApiController extends Controller
         $about = About::first();
 
         return response()->json([
-            'about' => new AboutResource($about);
+            'about' => new AboutResource($about),
             'goals' => GoalResource::collection($goals) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);

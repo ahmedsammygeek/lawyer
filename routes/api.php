@@ -12,5 +12,5 @@ Route::group(['prefix' => '/v1' , 'middleware' => ['set_local'] ], function() {
     Route::get('/topics/{topic}' , [ApiController::class , 'show_topic'] );
     Route::get('/contact_us' , [ApiController::class , 'contact_us'] );
     Route::post('/send_email' , [ApiController::class , 'send_email'] );
-    Route::post('/about' , [ApiController::class , 'about'] );
+    Route::get('/about' , [ApiController::class , 'about'] );
 });
