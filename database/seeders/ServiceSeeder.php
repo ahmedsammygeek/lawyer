@@ -12,6 +12,7 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
+        
         $service = new Service;
         $service->setTranslation('name' , 'ar' , 'القضايا المدنية والتجارية' );
         $service->setTranslation('name' , 'en' , 'Civil and commercial cases' );

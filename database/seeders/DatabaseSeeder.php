@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ServiceSeeder;
+use Database\Seeders\CaseStepSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(ServiceSeeder::class);
+        // $this->call(ServiceSeeder::class);
+        $this->call(CaseStepSeeder::class);
     }
 }
