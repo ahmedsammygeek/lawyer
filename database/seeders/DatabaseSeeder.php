@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\ServiceSeeder;
 use Database\Seeders\CaseStepSeeder;
 use Database\Seeders\GoalSeeder;
+use Database\Seeders\AboutSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(ServiceSeeder::class);
         // $this->call(CaseStepSeeder::class);
         // $this->call(GoalSeeder::class);
+        $this->call(AboutSeeder::class);
     }
 }
