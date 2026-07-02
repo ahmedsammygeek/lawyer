@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(ServiceSeeder::class);
         // $this->call(CaseStepSeeder::class);
-        $this->call(GoalSeeder::class);
+        // $this->call(GoalSeeder::class);
     }
 }

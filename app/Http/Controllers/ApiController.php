@@ -19,12 +19,14 @@ class ApiController extends Controller
         $services = Service::where('is_active' , 1)->get();
         $steps = CaseStep::get();
         $goals = Goal::where('is_active' , 1)->get();
+        $topics = Topic::inRandomOrder()->limit(3)->get();
 
         return response()->json([
             'services' => ServiceResource::collection($services) , 
             'case_steps' => CaseStepResource::collection($steps) , 
             'case_steps' => CaseStepResource::collection($steps) , 
             'goals' => GoalResource::collection($goals) , 
+            'topics' => TopicResource::collection($goals) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);
     }
