@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Setting , Category , Topic , CaseStep , Service};
-use App\Http\Resources\{SettingResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource};
+use App\Models\{Setting , Category , Topic , CaseStep , Goal , Service};
+use App\Http\Resources\{SettingResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource};
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
@@ -18,10 +18,13 @@ class ApiController extends Controller
 
         $services = Service::where('is_active' , 1)->get();
         $steps = CaseStep::get();
+        $goals = Goal::where('is_active' , 1)->get();
 
         return response()->json([
             'services' => ServiceResource::collection($services) , 
             'case_steps' => CaseStepResource::collection($steps) , 
+            'case_steps' => CaseStepResource::collection($steps) , 
+            'goals' => GoalResource::collection($goals) , 
             'informations' =>  new SettingResource('d') , 
         ], 200);
     }

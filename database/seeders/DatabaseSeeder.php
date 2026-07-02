@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ServiceSeeder;
 use Database\Seeders\CaseStepSeeder;
+use Database\Seeders\GoalSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,6 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // $this->call(ServiceSeeder::class);
-        $this->call(CaseStepSeeder::class);
+        // $this->call(CaseStepSeeder::class);
+        $this->call(GoalSeeder::class);
     }
 }
