@@ -28,7 +28,10 @@ class SettingsController extends Controller
         $settings = Setting::first();
 
         $settings->setTranslation('address' , 'ar' , $request->address_ar );
-        $settings->setTranslation('address' , 'en' , $request->address_ar );
+        $settings->setTranslation('address' , 'en' , $request->address_ar );  
+        $settings->setTranslation('about' , 'ar' , $request->about_ar );
+        $settings->setTranslation('about' , 'en' , $request->about_en );
+
         $settings->setTranslation('working_hours' , 'ar' , $request->working_hours_ar );
         $settings->setTranslation('working_hours' , 'en' , $request->working_hours_ar );
 

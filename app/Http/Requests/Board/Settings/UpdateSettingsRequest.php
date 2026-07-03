@@ -27,6 +27,8 @@ class UpdateSettingsRequest extends FormRequest
             'mobile' => 'nullable' , 
             'address_ar' => 'nullable' , 
             'address_en' => 'nullable' , 
+            'about_ar' => 'nullable' , 
+            'about_en' => 'nullable' , 
             'working_hours_ar' => 'nullable' , 
             'working_hours_en' => 'nullable' , 
             'facebook' => 'nullable|url' , 

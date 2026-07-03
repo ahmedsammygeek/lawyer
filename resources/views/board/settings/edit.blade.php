@@ -162,6 +162,29 @@
 						</div>
 
 
+						<div class="mb-3">
+							<label class="form-label required"> نبذه عن الموقع بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('about_ar') is-invalid @enderror " name='about_ar' value="{{ $settings->getTranslation('about' , 'ar') }}" >
+								@error('about_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> نبذه عن الموقع بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('about_en') is-invalid @enderror " name='about_en' value="{{ $settings->getTranslation('about' , 'en') }}" >
+								@error('about_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+
+
+
 
 						<div class="mb-3">
 							<label class="form-label required">  الشعار الحالى </label>
