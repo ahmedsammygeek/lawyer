@@ -22,40 +22,14 @@ use App\Http\Controllers\Board\SlideController;
 use App\Http\Controllers\Board\CertificateController;
 use App\Http\Controllers\Board\ProjectReservationController;
 use App\Http\Controllers\Board\ProjectMessageController;
+use App\Http\Controllers\Board\CaseStepController;
 
 Route::get('/' , function(){
 
 	return view('welcome');
 });
-
-// Route::group(
-// 	[
-// 		'prefix' => LaravelLocalization::setLocale(),
-// 		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-// 	], function(){ 
-// 		Route::get('/', [SiteController::class , 'index' ] )->name('index');
-// 		Route::get('/about', [SiteController::class , 'about' ] )->name('about');
-// 		Route::get('/services', [SiteController::class , 'services' ] )->name('services.index');
-// 		Route::get('/projects', [SiteController::class , 'projects' ] )->name('projects.index');
-// 		Route::get('/blog', [SiteController::class , 'topics' ] )->name('topics.index');
-// 		Route::get('/offers', [SiteController::class , 'offers' ] )->name('offers');
-// 		Route::get('/contact', [SiteController::class , 'contact' ] )->name('contact');
-// 		Route::get('/blog/{topic}', [SiteController::class , 'show_topic' ] )->name('topics.show');
-// 		Route::get('/services/{service}', [SiteController::class , 'show_service' ] )->name('services.show');
-// 		Route::get('/projects/{project}', [SiteController::class , 'show_project' ] )->name('projects.show');
-// 		Route::get('/privacy', [SiteController::class , 'privacy' ] )->name('privacy');
-// 		Route::post('/send'  , [SiteController::class , 'send'] )->name('contact.send');
-// 		Route::get('/shop'  , [SiteController::class , 'shop'] )->name('shop.index');
-// 		Route::get('/shop/{product}'  , [SiteController::class , 'show_product'] )->name('products.show');
-// 		Route::get('/shop/{product}/order'  , [SiteController::class , 'order'] )->name('products.order');
-// 		Route::post('/shop/{product}/order'  , [SiteController::class , 'store_order'] )->name('products.order.store');
-// 		Route::get('/covering'  , [SiteController::class , 'covering'] )->name('covering.index');
-// 	});
-
-
 Route::get('Board/login' , [LoginController::class , 'form' ] )->name('board.login.form');
 Route::post('Board/login' , [LoginController::class , 'login' ] )->name('board.login.post');
-
 Route::group(['prefix' => 'Board' , 'as' => 'board.' , 'middleware' => 'admin' ], function() {
 	Route::get('/' , [BoardController::class , 'index'] )->name('index'); // done
 	Route::get('/logout' , [BoardController::class , 'logout'] )->name('logout'); // done
@@ -67,6 +41,8 @@ Route::group(['prefix' => 'Board' , 'as' => 'board.' , 'middleware' => 'admin' ]
 	Route::resource('topics', TopicController::class );  // done
 	Route::resource('goals', GoalController::class );  // done
 	Route::resource('categories', CategoryController::class ); 
+	Route::resource('case_steps', CaseStepController::class ); 
+
 
 	Route::resource('slides' , SlideController::class );
 	Route::resource('certificates' , CertificateController::class );
