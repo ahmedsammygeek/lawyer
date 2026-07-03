@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Board;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tag;
-use App\Models\Topic;
-use App\Models\TopicTag;
+use App\Models\{Topic , Category};
 use App\Http\Requests\Board\Topics\StoreTopicRequest;
 use App\Http\Requests\Board\Topics\UpdateTopicRequest;
 
@@ -26,8 +24,8 @@ class TopicController extends Controller
      */
     public function create()
     {
-        $tags = Tag::all();
-        return view('board.topics.create' , compact('tags'));
+        $categories = Category::all();
+        return view('board.topics.create' , compact('categories'));
     }
 
     /**
@@ -36,23 +34,22 @@ class TopicController extends Controller
     public function store(StoreTopicRequest $request)
     {
         $topic = new Topic;
-        $topic->title = $request->title;
-        $topic->content = $request->content;
+        $topic->setTranslation('title' , 'ar' , $request->title_ar );
+        $topic->setTranslation('title' , 'en' , $request->title_en );
+        $topic->setTranslation('content' , 'ar' , $request->content_ar );
+        $topic->setTranslation('content' , 'en' , $request->content_en );
+
+
+
         $topic->is_active = $request->filled('is_active') ? 1 : 0;
-        $topic->image = basename($request->file('image')->store('topics'));
+        if ($request->hasFile('image')) {
+            $topic->image = basename($request->file('image')->store('topics'));
+        }
         $topic->user_id = Auth::id();
+        $topic->category_id = $request->category_id;
         $topic->save();
 
-        if ($request->filled('tags')) {
-            $topic_tags = [];
-            for ($i=0; $i <count($request->tags) ; $i++) { 
-                $topic_tags[] = new TopicTag([
-                    'tag_id' => $request->tags[$i] , 
-                    'user_id' => Auth::id() , 
-                ]);
-            }
-            $topic->tags()->saveMany($topic_tags);
-        }
+
 
 
         return redirect(route('board.topics.index'))->with('success'  , 'تم الاضفاه بنجاح');
@@ -63,7 +60,7 @@ class TopicController extends Controller
      */
     public function show(Topic $topic)
     {
-        $topic->load(['user' , 'tags.tag' ]);
+        $topic->load(['user' , 'category' ]);
         return view('board.topics.show' , compact('topic'));
     }
 
@@ -72,9 +69,8 @@ class TopicController extends Controller
      */
     public function edit(Topic $topic)
     {
-        $tags = Tag::all();
-        $topic_tags = $topic->tags()->pluck('tag_id')->toArray();
-        return view('board.topics.edit' , compact('tags'  , 'topic' , 'topic_tags' ) );
+        $categories = Category::all();
+        return view('board.topics.edit' , compact('topic' , 'categories' ) );
     }
 
     /**
@@ -82,34 +78,18 @@ class TopicController extends Controller
      */
     public function update(UpdateTopicRequest $request, Topic $topic)
     {
-        $topic->title = $request->title;
-        $topic->content = $request->content;
+
+        $topic->setTranslation('title' , 'ar' , $request->title_ar );
+        $topic->setTranslation('title' , 'en' , $request->title_en );
+        $topic->setTranslation('content' , 'ar' , $request->content_ar );
+        $topic->setTranslation('content' , 'en' , $request->content_en );
+        $topic->category_id = $request->category_id;
         $topic->is_active = $request->filled('is_active') ? 1 : 0;
         if ($request->filled('image')) {
             $topic->image = basename($request->file('image')->store('topics'));
         }
         $topic->save();
-
-        if ($request->filled('tags')) {
-            $topic->tags()->delete();
-            $topic_tags = [];
-            for ($i=0; $i <count($request->tags) ; $i++) { 
-                $topic_tags[] = new TopicTag([
-                    'tag_id' => $request->tags[$i] , 
-                    'user_id' => Auth::id() , 
-                ]);
-            }
-            $topic->tags()->saveMany($topic_tags);
-        }
-
         return redirect(route('board.topics.index'))->with('success'  , 'تم التعديل بنجاح');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

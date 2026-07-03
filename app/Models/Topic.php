@@ -4,17 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Spatie\Translatable\HasTranslations;
 class Topic extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
-    public function tags()
-    {
-        return $this->hasMany(TopicTag::class);
-    }
-
-
+    public $translatable = ['title' , 'content'];
+    
     public function user()
     {
         return $this->belongsTo(User::class);

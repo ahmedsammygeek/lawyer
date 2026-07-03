@@ -22,11 +22,13 @@ class StoreTopicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required' , 
-            'content' => 'required' , 
+            'title_ar' => 'required' , 
+            'content_ar' => 'required' , 
+            'title_en' => 'required' , 
+            'content_en' => 'required' , 
             'image' => 'required|image' , 
             'is_active' => 'nullable' , 
-            'tags' => 'nullable' , 
+            'category_id' => 'required' , 
         ];
     }
 }

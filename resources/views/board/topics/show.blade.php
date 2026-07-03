@@ -62,25 +62,33 @@
 									<th> تم الاضافه بواسطه </th>
 									<td> {{ $topic->user?->name }}  </td>
 								</tr>
+																<tr>
+									<th> التصنيف </th>
+									<td> 
+										{{ $topic->category?->title }} 
+									</td>
+								</tr>
 								<tr>
 									<th> العنوان بالعربيه </th>
-									<td> {{ $topic->title }}  </td>
+									<td> {{ $topic->getTranslation('title' , 'ar' ) }}  </td>
 								</tr>
 
 								<tr>
 									<th> المحتوى بالعربيه </th>
-									<td> {!! $topic->content !!}  </td>
+									<td> {!! $topic->getTranslation('content' , 'ar' ) !!}  </td>
 								</tr>
+
 								<tr>
-									<th> الوسوم </th>
-									<td> 
-										<ul>
-											@foreach ($topic->tags as $topic_tag)
-												<li> {{ $topic_tag->tag?->name }} </li>
-											@endforeach
-										</ul>
-									</td>
+									<th> العنوان بالانجليزيه </th>
+									<td> {{ $topic->getTranslation('title' , 'en' ) }}  </td>
 								</tr>
+
+								<tr>
+									<th> المحتوى بالانجليزيه </th>
+									<td> {!! $topic->getTranslation('content' , 'en' ) !!}  </td>
+								</tr>
+
+
 								<tr>
 									<th> صوره الخدمه </th>
 									<td> 

@@ -55,24 +55,46 @@
 							</div>
 						</div>
 
+					
+
+
 						<div class="mb-3">
-							<label class="form-label required"> العنوان المقال </label>
+							<label class="form-label required"> عنوان المقال  بالعربيه </label>
 							<div>
-								<input type="text" class="form-control @error('title') is-invalid @enderror " name='title' value="{{ $topic->title }}" >
-								@error('title')
+								<input type="text" class="form-control @error('title_ar') is-invalid @enderror " name='title_ar' value="{{ $topic->getTranslation('title' , 'ar') }}" >
+								@error('title_ar')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
 							</div>
 						</div>
 
 
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى التفصيلى للمقال  بالعربيه</label>
+							<div>
+								<textarea  class="form-control @error('content_ar') is-invalid @enderror " name='content_ar' id="tinymce-mytextarea" cols="30" rows="10"> {{ $topic->getTranslation('content' , 'ar') }}</textarea>
+								@error('content_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> عنوان المقال  بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('title_en') is-invalid @enderror " name='title_en' value="{{ $topic->getTranslation('title' , 'en') }}" >
+								@error('title_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
 
 
 						<div class="mb-3">
-							<label class="form-label required"> المحتوى التفصيلى للمقال </label>
+							<label class="form-label required"> المحتوى التفصيلى للمقال  بالانجليزيه</label>
 							<div>
-								<textarea  class="form-control @error('content') is-invalid @enderror " name='content' id="tinymce-mytextarea" cols="30" rows="10"> {{ $topic->content }} </textarea>
-								@error('content')
+								<textarea  class="form-control @error('content_en') is-invalid @enderror " name='content_en' id="tinymce-mytextarea" cols="30" rows="10">{{ $topic->getTranslation('content' , 'en') }}</textarea>
+								@error('content_en')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
 							</div>
@@ -91,13 +113,22 @@
 						</div>
 
 						<div class="mb-3">
-							<label class="form-label"> الوسوم </label>
+							<label class="form-label"> التصنيف </label>
 							<div>
-								<select name="tags[]" class='select form-control' multiple="">
-									@foreach ($tags as $tag)
-										<option value="{{ $tag->id }}" {{ in_array($tag->id , $topic_tags ) ? 'selected="selected"' : '' }} > {{ $tag->name }} </option>
+								<select name="category_id" class='select form-control' >
+									@foreach ($categories as $category)
+										<option value="{{ $category->id }}" @selected($topic->category_id == $category->id) > 
+											{{ $category->title }} 
+										</option>
 									@endforeach
 								</select>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label"> صوره المقال الحاليه </label>
+							<div>
+								<img class="img-thumbnail" src="{{ Storage::url('topics/'.$topic->image) }}" alt="">
 							</div>
 						</div>
 					</div>

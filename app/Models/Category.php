@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['title' , 'subtitle'];
+    public $translatable = ['title' ];
 
     public function user()
     {
