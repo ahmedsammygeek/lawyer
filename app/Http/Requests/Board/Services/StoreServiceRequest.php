@@ -24,7 +24,10 @@ class StoreServiceRequest extends FormRequest
         return [
             'name_ar' => 'required' , 
             'name_en' => 'required' , 
+            'content_ar' => 'required' , 
+            'content_en' => 'required' , 
             'image' => 'required|image' , 
+            'icon' => 'required|image' , 
             'is_active' => 'nullable',
         ];
     }

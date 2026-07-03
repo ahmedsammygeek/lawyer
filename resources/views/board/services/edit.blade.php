@@ -10,7 +10,7 @@
 					تعديل
 				</div>
 				<h2 class="page-title">
-					 التغليف و العبوات 
+					الخدمات
 				</h2>
 			</div>
 			<!-- Page title actions -->
@@ -25,7 +25,7 @@
 							<circle cx="14.5" cy="14.5" r=".5" fill="currentColor"></circle>
 							<path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"></path>
 						</svg>
-						عرض كافه  التغليف و العبوات 
+						عرض كافه  الخدمات
 					</a>
 				</div>
 			</div>
@@ -56,10 +56,31 @@
 						</div>
 
 						<div class="mb-3">
+							<label class="form-label required"> الايكونه </label>
+							<div>
+								<input type="file" class="form-control @error('icon') is-invalid @enderror " name='icon' >
+								@error('icon')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+
+						<div class="mb-3">
 							<label class="form-label required"> العنوان بالعربيه </label>
 							<div>
 								<input type="text" class="form-control @error('name_ar') is-invalid @enderror " name='name_ar' value="{{ $service->getTranslation('name' , 'ar') }}" >
 								@error('name_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى  بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_ar') is-invalid @enderror " name='content_ar' value="{{ $service->getTranslation('content' , 'ar') }}" >
+								@error('content_ar')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
 							</div>
@@ -75,7 +96,33 @@
 							</div>
 						</div>
 
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى  بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_en') is-invalid @enderror " name='content_en' value="{{ $service->getTranslation('content' , 'en') }}" >
+								@error('content_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
 
+
+						
+
+						<div class="mb-3">
+							<label class="form-label"> الايكونه الحاليه </label>
+							<div>
+								<img  class="img-thumbnail" src="{{ Storage::url('services/'.$service->icon) }}" alt="">
+							</div>
+						</div>
+
+
+						<div class="mb-3">
+							<label class="form-label"> الصوره الحاليه </label>
+							<div>
+								<img  class="img-thumbnail" src="{{ Storage::url('services/'.$service->image) }}" alt="">
+							</div>
+						</div>
 
 
 
@@ -119,7 +166,7 @@
 				'advlist autolink lists link image charmap print preview anchor',
 				'searchreplace visualblocks code fullscreen',
 				'insertdatetime media table paste code help wordcount'
-				],
+			],
 			toolbar: 'undo redo | formatselect | ' +
 			'bold italic backcolor | alignleft aligncenter ' +
 			'alignright alignjustify | bullist numlist outdent indent | ' +

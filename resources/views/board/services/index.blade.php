@@ -10,7 +10,7 @@
 					عرض
 				</div>
 				<h2 class="page-title">
-					التغليف و العبوات
+					الخدمات
 				</h2>
 			</div>
 			<!-- Page title actions -->
@@ -22,7 +22,7 @@
 							<path d="M12 5l0 14"></path>
 							<path d="M5 12l14 0"></path>
 						</svg>
-						إضافه  جديد
+						إضافه خدمه جديده
 					</a>
 				</div>
 			</div>

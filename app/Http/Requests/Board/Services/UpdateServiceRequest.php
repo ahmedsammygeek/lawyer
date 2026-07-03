@@ -24,8 +24,11 @@ class UpdateServiceRequest extends FormRequest
         return [
             'name_ar' => 'required' , 
             'name_en' => 'required' , 
+            'content_ar' => 'required' , 
+            'content_en' => 'required' , 
             'is_active' => 'nullable',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image' , 
+            'icon' => 'nullable|image' , 
         ];
     }
 }

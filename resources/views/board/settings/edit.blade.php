@@ -77,7 +77,7 @@
 						<div class="mb-3">
 							<label class="form-label required"> عنوان المقر بالانجليزيه  </label>
 							<div>
-								<input type="text" class="form-control @error('address_en') is-invalid @enderror " name='address_en' value="{{ $settings->getTranslation('address' , 'ar') }}" >
+								<input type="text" class="form-control @error('address_en') is-invalid @enderror " name='address_en' value="{{ $settings->getTranslation('address' , 'en') }}" >
 								@error('address_en')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
@@ -85,6 +85,26 @@
 						</div>
 
 
+						<div class="mb-3">
+							<label class="form-label required"> مواعيد العم بالعربيه  </label>
+							<div>
+								<input type="text" class="form-control @error('working_hours_ar') is-invalid @enderror " name='working_hours_ar' value="{{ $settings->getTranslation('working_hours' , 'ar') }}" >
+								@error('working_hours_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+
+						<div class="mb-3">
+							<label class="form-label required"> مواعيد العم بالانجليزيه  </label>
+							<div>
+								<input type="text" class="form-control @error('working_hours_en') is-invalid @enderror " name='working_hours_en' value="{{ $settings->getTranslation('working_hours' , 'en') }}" >
+								@error('working_hours_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
 
 
 
@@ -122,10 +142,20 @@
 						</div>
 
 						<div class="mb-3">
-							<label class="form-label required"> youtube </label>
+							<label class="form-label required"> snap chat </label>
 							<div>
-								<input type="text" class="form-control @error('youtube') is-invalid @enderror " name='youtube' value="{{ $settings->youtube }}" >
-								@error('youtube')
+								<input type="text" class="form-control @error('snap_chat') is-invalid @enderror " name='snap_chat' value="{{ $settings->snap_chat }}" >
+								@error('snap_chat')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> tiktok </label>
+							<div>
+								<input type="text" class="form-control @error('tiktok') is-invalid @enderror " name='tiktok' value="{{ $settings->tiktok }}" >
+								@error('tiktok')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
 							</div>
@@ -139,27 +169,7 @@
 								<img  class='img-thumbnail' src="{{ Storage::url('settings/'.$settings->logo) }}" alt="">
 							</div>
 						</div>
-						<div class="mb-3">
-							<label class="form-label required">  بانر contact us الحالى </label>
-							<div>
-								<img class='img-thumbnail'  src="{{ Storage::url('settings/'.$settings->contact_banner) }}" alt="">
-							</div>
-						</div>
-
-
-						<div class="mb-3">
-							<label class="form-label required"> بانر shop الحالى </label>
-							<div>
-								<img class='img-thumbnail'  src="{{ Storage::url('settings/'.$settings->shop_banner) }}" alt="">
-							</div>
-						</div>
-
-						<div class="mb-3">
-							<label class="form-label required">  بانر covering الحالى</label>
-							<div>
-								<img class='img-thumbnail'  src="{{ Storage::url('settings/'.$settings->covering_banner) }}" alt="">
-							</div>
-						</div>
+			
 					</div>
 					<div class="card-footer text-end">
 						<div class='d-flex' >

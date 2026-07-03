@@ -235,7 +235,7 @@ switch (request()->segment(2)) {
      </svg>
    </span>
    <span class="nav-link-title">
-    التغليف و العبوات 
+    الخدمات
   </span>
 </a>
 </li>

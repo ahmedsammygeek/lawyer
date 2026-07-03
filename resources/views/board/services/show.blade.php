@@ -67,13 +67,26 @@
 									<td> {{ $service->getTranslation('name' , 'ar') }}  </td>
 								</tr>
 								<tr>
-									<th> المحتوى البسيط  بالعربيه </th>
-									<td> {{ $service->getTranslation('subtitle' , 'ar') }}  </td>
+									<th> العنوان بالانجليزيه </th>
+									<td> {{ $service->getTranslation('name' , 'ar') }}  </td>
 								</tr>
 								<tr>
 									<th> المحتوى بالعربيه </th>
 									<td> {!! $service->getTranslation('content' , 'ar') !!}  </td>
 								</tr>
+								<tr>
+									<th> المحتوى بالانجليزيه </th>
+									<td> {!! $service->getTranslation('content' , 'ar') !!}  </td>
+								</tr>
+								<tr>
+									<th> ايكونه الخدمه </th>
+									<td> 
+										<a class="avatar" data-fslightbox="gallery" href="{{ Storage::url('services/'.$service->icon) }}">
+											<img  src="{{ Storage::url('services/'.$service->icon) }}" alt="">
+										</a>
+									</td>
+								</tr>		
+
 								<tr>
 									<th> صوره الخدمه </th>
 									<td> 

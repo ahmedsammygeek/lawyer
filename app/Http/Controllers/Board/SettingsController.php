@@ -41,6 +41,10 @@ class SettingsController extends Controller
         $settings->snap_chat = $request->snap_chat;
         $settings->tiktok = $request->tiktok;
 
+        if ($request->hasFile('logo')) {
+            $settings->logo = basename($request->file('logo')->store('settings'));
+        }
+
 
         $settings->save();
         return back()->with('success' , 'تم تعديل الاعدادات بنجاح' );

@@ -22,19 +22,18 @@ class UpdateSettingsRequest extends FormRequest
     public function rules(): array
     {
         return [
-
+            'logo' => 'nullable|image' , 
             'email' => 'nullable|email' , 
             'mobile' => 'nullable' , 
             'address_ar' => 'nullable' , 
             'address_en' => 'nullable' , 
+            'working_hours_ar' => 'nullable' , 
+            'working_hours_en' => 'nullable' , 
             'facebook' => 'nullable|url' , 
             'twitter' => 'nullable|url' , 
             'instagram' => 'nullable|url' , 
             'snap_chat' => 'nullable|url' , 
             'tiktok' => 'nullable|url' , 
-            'working_hours_ar' => 'nullable' , 
-            'working_hours_en' => 'nullable' , 
-
         ];
     }
 }
