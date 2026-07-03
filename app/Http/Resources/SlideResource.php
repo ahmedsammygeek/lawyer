@@ -17,7 +17,7 @@ class SlideResource extends JsonResource
         return [
             'head_title' => $this->head_title , 
             'title' => $this->title , 
-            'sub_title' => $this->sub_title , 
+            'sub_title' => $this->subtitle , 
             'content' => $this->content , 
             'image' => Storage::url('slides/'.$this->image), 
         ];
