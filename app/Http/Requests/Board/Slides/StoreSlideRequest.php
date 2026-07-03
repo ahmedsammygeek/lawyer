@@ -23,10 +23,14 @@ class StoreSlideRequest extends FormRequest
     {
         return [
             'image' => 'required|image' , 
-            'title_ar' => 'nullable' , 
-            'title_en' => 'nullable' , 
-            'subtitle_ar' => 'nullable' , 
-            'subtitle_ar' => 'nullable' , 
+            'title_ar' => 'required' , 
+            'title_en' => 'required' , 
+            'subtitle_ar' => 'required' , 
+            'subtitle_ar' => 'required' , 
+            'content_ar' => 'required' , 
+            'content_en' => 'required' , 
+            'head_title_ar' => 'required' , 
+            'head_title_ar' => 'required' , 
             'is_active' => 'nullable' , 
         ];
     }

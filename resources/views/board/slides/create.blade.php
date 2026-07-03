@@ -54,6 +54,27 @@
 						</div>
 
 						<div class="mb-3">
+							<label class="form-label required"> العنوان الصغير بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('head_title_ar') is-invalid @enderror " name='head_title_ar' value="{{ old('head_title_ar') }}" >
+								@error('head_title_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> العنوان الصغير بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('head_title_en') is-invalid @enderror " name='head_title_en' value="{{ old('head_title_en') }}" >
+								@error('head_title_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+
+						<div class="mb-3">
 							<label class="form-label required"> العنوان بالعربيه </label>
 							<div>
 								<input type="text" class="form-control @error('title_ar') is-invalid @enderror " name='title_ar' value="{{ old('title_ar') }}" >
@@ -90,6 +111,26 @@
 								@enderror
 							</div>
 						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_ar') is-invalid @enderror " name='content_ar' value="{{ old('content_ar') }}" >
+								@error('content_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_en') is-invalid @enderror " name='content_en' value="{{ old('content_en') }}" >
+								@error('content_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
 
 
 

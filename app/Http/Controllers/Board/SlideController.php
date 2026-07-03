@@ -35,6 +35,10 @@ class SlideController extends Controller
         $Slide->setTranslation('title' , 'en' , $request->title_en);
         $Slide->setTranslation('subtitle' , 'ar' , $request->subtitle_ar);
         $Slide->setTranslation('subtitle' , 'en' , $request->subtitle_en);
+        $Slide->setTranslation('content' , 'ar' , $request->content_ar);
+        $Slide->setTranslation('content' , 'en' , $request->content_en);
+        $Slide->setTranslation('head_title' , 'ar' , $request->head_title_ar);
+        $Slide->setTranslation('head_title' , 'en' , $request->head_title_en);
         $Slide->is_active = $request->filled('is_active') ? 1 : 0;
         $Slide->user_id = Auth::id();
         $Slide->image = basename($request->file('image')->store('slides'));
@@ -68,6 +72,10 @@ class SlideController extends Controller
         $slide->setTranslation('title' , 'en' , $request->title_en);
         $slide->setTranslation('subtitle' , 'ar' , $request->subtitle_ar);
         $slide->setTranslation('subtitle' , 'en' , $request->subtitle_en);
+        $slide->setTranslation('content' , 'ar' , $request->content_ar);
+        $slide->setTranslation('content' , 'en' , $request->content_en);
+        $slide->setTranslation('head_title' , 'ar' , $request->head_title_ar);
+        $slide->setTranslation('head_title' , 'en' , $request->head_title_en);
         $slide->is_active = $request->filled('is_active') ? 1 : 0;
         if ($request->hasFile('image')) {
             $slide->image = basename($request->file('image')->store('slides'));

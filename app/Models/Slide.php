@@ -9,7 +9,7 @@ class Slide extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['title', 'subtitle'];
+    public $translatable = ['title', 'subtitle' , 'content' , 'head_title'];
 
 
 

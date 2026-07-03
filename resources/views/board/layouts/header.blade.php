@@ -32,7 +32,7 @@ switch (request()->segment(2)) {
   case 'settings':
   $settings = 'active';
   break;
-   case 'topics':
+  case 'topics':
   $topics = 'active';
   break;
 
@@ -120,7 +120,7 @@ switch (request()->segment(2)) {
             </span>
           </a>
         </li>
-         <li class="nav-item {{ $topics }}">
+        <li class="nav-item {{ $topics }}">
           <a class="nav-link" href="{{ route('board.topics.index') }}" >
             <span class="nav-link-icon d-md-none d-lg-inline-block">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-arcade" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -138,62 +138,62 @@ switch (request()->segment(2)) {
         </a>
       </li>
 
-        <li class="nav-item {{ $slides }}">
-          <a class="nav-link" href="{{ route('board.slides.index') }}" >
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-arcade" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-               <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-               <path d="M20 12.5v4.75a.734 .734 0 0 1 -.055 .325a.704 .704 0 0 1 -.348 .366l-5.462 2.58a5 5 0 0 1 -4.27 0l-5.462 -2.58a.705 .705 0 0 1 -.401 -.691l0 -4.75"></path>
-               <path d="M4.431 12.216l5.634 -2.332a5.065 5.065 0 0 1 3.87 0l5.634 2.332a.692 .692 0 0 1 .028 1.269l-5.462 2.543a5.064 5.064 0 0 1 -4.27 0l-5.462 -2.543a.691 .691 0 0 1 .028 -1.27z"></path>
-               <path d="M12 7l0 6"></path>
-             </svg>
-
-           </span>
-           <span class="nav-link-title">
-            عارض الصور
-          </span>
-        </a>
-      </li>
-      <li class="nav-item {{ $categories }}">
-        <a class="nav-link" href="{{ route('board.categories.index') }}" >
+      <li class="nav-item {{ $slides }}">
+        <a class="nav-link" href="{{ route('board.slides.index') }}" >
           <span class="nav-link-icon d-md-none d-lg-inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-arcade" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-             <path d="M3 21l18 0"></path>
-             <path d="M3 10l18 0"></path>
-             <path d="M5 6l7 -3l7 3"></path>
-             <path d="M4 10l0 11"></path>
-             <path d="M20 10l0 11"></path>
-             <path d="M8 14l0 3"></path>
-             <path d="M12 14l0 3"></path>
-             <path d="M16 14l0 3"></path>
+             <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+             <path d="M20 12.5v4.75a.734 .734 0 0 1 -.055 .325a.704 .704 0 0 1 -.348 .366l-5.462 2.58a5 5 0 0 1 -4.27 0l-5.462 -2.58a.705 .705 0 0 1 -.401 -.691l0 -4.75"></path>
+             <path d="M4.431 12.216l5.634 -2.332a5.065 5.065 0 0 1 3.87 0l5.634 2.332a.692 .692 0 0 1 .028 1.269l-5.462 2.543a5.064 5.064 0 0 1 -4.27 0l-5.462 -2.543a.691 .691 0 0 1 .028 -1.27z"></path>
+             <path d="M12 7l0 6"></path>
            </svg>
+
          </span>
          <span class="nav-link-title">
-          التصنيفات
+          عارض الصور
         </span>
       </a>
     </li>
-<li class="nav-item {{ $goals }}">
-  <a class="nav-link" href="{{ route('board.goals.index') }}" >
-    <span class="nav-link-icon d-md-none d-lg-inline-block">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-       <path d="M3 21l18 0"></path>
-       <path d="M3 10l18 0"></path>
-       <path d="M5 6l7 -3l7 3"></path>
-       <path d="M4 10l0 11"></path>
-       <path d="M20 10l0 11"></path>
-       <path d="M8 14l0 3"></path>
-       <path d="M12 14l0 3"></path>
-       <path d="M16 14l0 3"></path>
-     </svg>
-   </span>
-   <span class="nav-link-title">
-    لماذا نحن
-  </span>
-</a>
+    <li class="nav-item {{ $categories }}">
+      <a class="nav-link" href="{{ route('board.categories.index') }}" >
+        <span class="nav-link-icon d-md-none d-lg-inline-block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+           <path d="M3 21l18 0"></path>
+           <path d="M3 10l18 0"></path>
+           <path d="M5 6l7 -3l7 3"></path>
+           <path d="M4 10l0 11"></path>
+           <path d="M20 10l0 11"></path>
+           <path d="M8 14l0 3"></path>
+           <path d="M12 14l0 3"></path>
+           <path d="M16 14l0 3"></path>
+         </svg>
+       </span>
+       <span class="nav-link-title">
+        التصنيفات
+      </span>
+    </a>
+  </li>
+  <li class="nav-item {{ $goals }}">
+    <a class="nav-link" href="{{ route('board.goals.index') }}" >
+      <span class="nav-link-icon d-md-none d-lg-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+         <path d="M3 21l18 0"></path>
+         <path d="M3 10l18 0"></path>
+         <path d="M5 6l7 -3l7 3"></path>
+         <path d="M4 10l0 11"></path>
+         <path d="M20 10l0 11"></path>
+         <path d="M8 14l0 3"></path>
+         <path d="M12 14l0 3"></path>
+         <path d="M16 14l0 3"></path>
+       </svg>
+     </span>
+     <span class="nav-link-title">
+      لماذا نحن
+    </span>
+  </a>
 </li>
 
 <li class="nav-item {{ $services }}">
@@ -237,46 +237,23 @@ switch (request()->segment(2)) {
 
 
 <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
-                          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M15 15l3.35 3.35"></path><path d="M9 15l-3.35 3.35"></path><path d="M5.65 5.65l3.35 3.35"></path><path d="M18.35 5.65l-3.35 3.35"></path></svg>
-                        </span>
-                        <span class="nav-link-title">
-                          صفحات اخرى
-                        </span>
-                      </a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('board.about.edit') }}" target="_blank" rel="noopener">
-                         من نحن 
-                        </a>
-                        <a class="dropdown-item" href="{{ route('board.goals.index') }}" target="_blank" rel="noopener">
-                          الاهداف
-                        </a>
-                        <a class="dropdown-item" href="{{ route('board.terms.edit') }}">
-                          سياسه الموقع
-                        </a>
-                        
-                       
-                      </div>
-                    </li>
-
-
-{{-- <li class="nav-item {{ $goals }}">
-  <a class="nav-link" href="{{ route('board.goals.index') }}" >
+  <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
     <span class="nav-link-icon d-md-none d-lg-inline-block">
-     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hand-stop" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-       <path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5"></path>
-       <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5"></path>
-       <path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5"></path>
-       <path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"></path>
-     </svg>
-   </span>
-   <span class="nav-link-title">
-    الاهداف
-  </span>
-</a>
-</li> --}}
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M15 15l3.35 3.35"></path><path d="M9 15l-3.35 3.35"></path><path d="M5.65 5.65l3.35 3.35"></path><path d="M18.35 5.65l-3.35 3.35"></path></svg>
+    </span>
+    <span class="nav-link-title">
+      صفحات اخرى
+    </span>
+  </a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{{ route('board.about.edit') }}" target="_blank" rel="noopener">
+    نبذة عني
+   </a>
+
+ </div>
+</li>
+
+
 
 </ul>
 

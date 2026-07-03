@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Board;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Setting;
+use App\Models\About;
 use App\Http\Requests\Board\Settings\UpdateAboutRequest;
 class AboutController extends Controller
 {
@@ -16,8 +16,8 @@ class AboutController extends Controller
      */
     public function edit()
     {
-        $settings = Setting::first();
-        return view('board.about.edit' , compact('settings') );
+        $about = About::first();
+        return view('board.about.edit' , compact('about') );
     }
 
     /**
@@ -25,17 +25,36 @@ class AboutController extends Controller
      */
     public function update(UpdateAboutRequest $request)
     {
-        $settings = Setting::first();
-        $settings->setTranslation('about' , 'ar' , $request->about_ar );
-        $settings->setTranslation('about' , 'en' , $request->about_en );
-        if ($request->hasFile('about_banner')) {
-            $settings->about_banner = basename($request->file('about_banner')->store('settings'));
+        $about = About::first();
+
+
+        $about->setTranslation('name' , 'ar' , $request->name_ar );
+        $about->setTranslation('name' , 'en' , $request->name_en );
+
+        $about->setTranslation('job_title' , 'ar' , $request->job_title_ar );
+        $about->setTranslation('job_title' , 'en' , $request->job_title_en );
+
+        $about->setTranslation('quote' , 'ar' , $request->quote_ar );
+        $about->setTranslation('quote' , 'en' , $request->quote_en );
+
+        $about->setTranslation('left_text' , 'ar' , $request->left_text_ar );
+        $about->setTranslation('left_text' , 'en' , $request->left_text_en );
+
+        $about->setTranslation('right_text' , 'ar' , $request->right_text_ar );
+        $about->setTranslation('right_text' , 'en' , $request->right_text_en );
+
+        $about->setTranslation('bio' , 'ar' , $request->bio_ar );
+        $about->setTranslation('bio' , 'en' , $request->bio_en );
+
+
+        if ($request->hasFile('main_image')) {
+            $about->main_image = basename($request->file('main_image')->store('about'));
         }
-        if ($request->hasFile('about_image')) {
-            $settings->about_image = basename($request->file('about_image')->store('settings'));
+        if ($request->hasFile('bio_image')) {
+            $about->bio_image = basename($request->file('bio_image')->store('about'));
         }
-        $settings->save();
-        return redirect()->back()->with('success' , 'تم تعديل محتوى من نحن بنجاح' );
+        $about->save();
+        return redirect()->back()->with('success' , 'تم تعديل محتوى نبذة عني بنجاح' );
     }
 
    

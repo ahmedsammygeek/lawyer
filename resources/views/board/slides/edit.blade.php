@@ -55,6 +55,27 @@
 						</div>
 
 						<div class="mb-3">
+							<label class="form-label required"> العنوان الصغير بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('head_title_ar') is-invalid @enderror " name='head_title_ar' value="{{ $slide->getTranslation('head_title' , 'ar') }}" >
+								@error('head_title_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label required"> العنوان الصغير بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('head_title_en') is-invalid @enderror " name='head_title_en' value="{{ $slide->getTranslation('head_title' , 'en') }}" >
+								@error('head_title_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
+
+						<div class="mb-3">
 							<label class="form-label required"> العنوان بالعربيه </label>
 							<div>
 								<input type="text" class="form-control @error('title_ar') is-invalid @enderror " name='title_ar' value="{{ $slide->getTranslation('title' , 'ar') }}" >
@@ -91,6 +112,27 @@
 								@enderror
 							</div>
 						</div>
+
+
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى بالعربيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_ar') is-invalid @enderror " name='content_ar' value="{{ $slide->getTranslation('content' , 'ar') }}" >
+								@error('content_ar')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label required"> المحتوى بالانجليزيه </label>
+							<div>
+								<input type="text" class="form-control @error('content_en') is-invalid @enderror " name='content_en' value="{{ $slide->getTranslation('content' , 'en') }}" >
+								@error('content_en')
+								<small class="form-hint text-danger"> {{ $message }} </small>
+								@enderror
+							</div>
+						</div>
+
 
 
 

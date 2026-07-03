@@ -22,10 +22,23 @@ class UpdateAboutRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'about_ar' => 'required' , 
-            'about_en' => 'required' , 
-            'about_banner' => 'nullable|image' , 
-            'about_image' => 'nullable|image' , 
+            'name_ar' => 'required' , 
+            'job_title_ar' => 'required' , 
+            'quote_ar' => 'required' , 
+            'left_text_ar' => 'required' , 
+            'right_text_ar' => 'required' , 
+            'bio_ar' => 'required' , 
+            'name_en' => 'required' , 
+            'job_title_en' => 'required' , 
+            'quote_en' => 'required' , 
+            'left_text_en' => 'required' , 
+            'right_text_en' => 'required' , 
+            'bio_en' => 'required' , 
+
+
+
+            'main_image' => 'nullable|image' , 
+            'bio_image' => 'nullable|image' , 
         ];
     }
 }
