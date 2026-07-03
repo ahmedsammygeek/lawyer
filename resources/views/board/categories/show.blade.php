@@ -51,8 +51,12 @@
 									<td> {{ $category->user?->name }}  </td>
 								</tr>
 								<tr>
-									<th> اسم التصنيف </th>
-									<td> {{ $category->name }}  </td>
+									<th> اسم التصنيف بالعربيه </th>
+									<td> {{ $category->getTranslation('title' , 'ar') }}  </td>
+								</tr>
+								<tr>
+									<th> اسم التصنيف بالانجليزيه </th>
+									<td> {{ $category->getTranslation('title' , 'en') }}  </td>
 								</tr>
 								<tr>
 									<th> السماح بالعرض داخل الموقع </th>

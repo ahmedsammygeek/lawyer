@@ -34,10 +34,6 @@ class CategoryController extends Controller
         $category = new Category;
         $category->setTranslation('title' ,'ar' , $request->title_ar );
         $category->setTranslation('title' ,'en' , $request->title_en );
-        $category->setTranslation('subtitle' ,'ar' , $request->subtitle_ar );
-        $category->setTranslation('subtitle' ,'en' , $request->subtitle_en );
-        $category->icon = basename($request->file('icon')->store('categories'));
-        $category->image = basename($request->file('image')->store('categories'));
         $category->user_id = Auth::id();
         $category->is_active = $request->filled('is_active') ? 1 : 0;
         $category->save();
@@ -68,33 +64,11 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request,Category $category)
     {
-
         $category->setTranslation('title' ,'ar' , $request->title_ar );
         $category->setTranslation('title' ,'en' , $request->title_en );
-        $category->setTranslation('subtitle' ,'ar' , $request->subtitle_ar );
-        $category->setTranslation('subtitle' ,'en' , $request->subtitle_en );
-        if ($request->hasFile('icon')) {
-            $category->icon = basename($request->file('icon')->store('categories'));
-        }
-        
-        if ($request->hasFile('image')) {
-            $category->image = basename($request->file('image')->store('categories'));
-        }
-
         $category->is_active = $request->filled('is_active') ? 1 : 0;
         $category->save();
-
-
-        return redirect(route('board.categories.index'))->with('success' ,'تم الاضافه بنجاح' );
-
         return redirect(route('board.categories.index'))->with('success' ,'تم التعديل بنجاح' );
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

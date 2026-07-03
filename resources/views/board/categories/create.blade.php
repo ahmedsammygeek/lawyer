@@ -45,25 +45,6 @@
 						<h3 class="card-title text-white"> إضافه تصنيفٍ جديد </h3>
 					</div>
 					<div class="card-body">
-						<div class="mb-3">
-							<label class="form-label required">الايكونه </label>
-							<div>
-								<input type="file" class="form-control @error('icon') is-invalid @enderror " name='icon' value="{{ old('icon') }}" >
-								@error('icon')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-
-						<div class="mb-3">
-							<label class="form-label required"> الصوره </label>
-							<div>
-								<input type="file" class="form-control @error('image') is-invalid @enderror " name='image' value="{{ old('image') }}" >
-								@error('image')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
 
 						<div class="mb-3">
 							<label class="form-label required"> العنوان بالعربيه </label>
@@ -84,24 +65,7 @@
 								@enderror
 							</div>
 						</div>
-						<div class="mb-3">
-							<label class="form-label required"> العنوان الفرعى بالعربيه </label>
-							<div>
-								<input type="text" class="form-control @error('subtitle_ar') is-invalid @enderror " name='subtitle_ar' value="{{ old('subtitle_ar') }}" >
-								@error('subtitle_ar')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label required"> العنوان الفرعى بالانجليزيه </label>
-							<div>
-								<input type="text" class="form-control @error('subtitle_en') is-invalid @enderror " name='subtitle_en' value="{{ old('subtitle_en') }}" >
-								@error('subtitle_en')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
+						
 
 
 						<div class="mb-3">

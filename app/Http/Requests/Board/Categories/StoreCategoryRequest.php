@@ -24,10 +24,6 @@ class StoreCategoryRequest extends FormRequest
         return [
             'title_ar' => 'required' , 
             'title_en' => 'required' , 
-            'subtitle_ar' => 'required' , 
-            'subtitle_en' => 'required' , 
-            'image' => 'required|image' , 
-            'icon' => 'required|image' , 
             'is_active' => 'nullable',
         ];
     }

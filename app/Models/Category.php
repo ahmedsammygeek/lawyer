@@ -17,8 +17,8 @@ class Category extends Model
     }
 
 
-    public function products()
+    public function topics()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Topic::class);
     }
 }

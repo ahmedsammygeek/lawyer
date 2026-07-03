@@ -46,25 +46,6 @@
 						<h3 class="card-title text-white"> تعديل تصنيفٍ  </h3>
 					</div>
 					<div class="card-body">
-						<div class="mb-3">
-							<label class="form-label required">الايكونه </label>
-							<div>
-								<input type="file" class="form-control @error('icon') is-invalid @enderror " name='icon' value="{{ old('icon') }}" >
-								@error('icon')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-
-						<div class="mb-3">
-							<label class="form-label required"> الصوره </label>
-							<div>
-								<input type="file" class="form-control @error('image') is-invalid @enderror " name='image' value="{{ old('image') }}" >
-								@error('image')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
 
 						<div class="mb-3">
 							<label class="form-label required"> العنوان بالعربيه </label>
@@ -85,24 +66,7 @@
 								@enderror
 							</div>
 						</div>
-						<div class="mb-3">
-							<label class="form-label required"> العنوان الفرعى بالعربيه </label>
-							<div>
-								<input type="text" class="form-control @error('subtitle_ar') is-invalid @enderror " name='subtitle_ar' value="{{ $category->getTranslation('subtitle' , 'ar') }}" >
-								@error('subtitle_ar')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label required"> العنوان الفرعى بالانجليزيه </label>
-							<div>
-								<input type="text" class="form-control @error('subtitle_en') is-invalid @enderror " name='subtitle_en' value="{{ $category->getTranslation('subtitle' , 'en') }}" >
-								@error('subtitle_en')
-								<small class="form-hint text-danger"> {{ $message }} </small>
-								@enderror
-							</div>
-						</div>
+						
 
 
 						<div class="mb-3">
@@ -115,20 +79,6 @@
 							</div>
 						</div>
 
-						<div class="mb-3">
-							<label class="form-label"> الايمكونه الحاليه </label>
-							<div>
-								<img class='img-thumbnail' src="{{ Storage::url('categories/'.$category->icon) }}" alt="">
-							</div>
-						</div>
-
-
-						<div class="mb-3">
-							<label class="form-label"> الصوره الحاليه </label>
-							<div>
-								<img class='img-thumbnail' src="{{ Storage::url('categories/'.$category->image) }}" alt="">
-							</div>
-						</div>
 					</div>
 					<div class="card-footer text-end">
 						<div class='d-flex' >

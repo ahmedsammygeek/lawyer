@@ -25,10 +25,6 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'title_ar' => 'required' , 
             'title_en' => 'required' , 
-            'subtitle_ar' => 'required' , 
-            'subtitle_en' => 'required' , 
-            'image' => 'nullable|image' , 
-            'icon' => 'nullable|image' , 
             'is_active' => 'nullable',
         ];
     }
