@@ -91,7 +91,7 @@
 						</div>
 
 
-							<div class="mb-3">
+						<div class="mb-3">
 							<label class="form-label required"> المحتوى المحتوى </label>
 							<div>
 								<textarea  class="form-control @error('content_en') is-invalid @enderror " name='content_en'  cols="30" rows="10"> {{ $goal->getTranslation('content' , 'en') }} </textarea>
@@ -101,9 +101,6 @@
 							</div>
 						</div>
 
-
-
-
 						<div class="mb-3">
 							<label class="form-label"> خصائص </label>
 							<div>
@@ -111,6 +108,13 @@
 									<input class="form-check-input" name='is_active' type="checkbox" {{ $goal->is_active == 1 ? 'checked' : '' }}>
 									<span class="form-check-label"> السماح بالعرض </span>
 								</label>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label class="form-label"> الصوره الحاليه </label>
+							<div>
+								<img src="{{ Storage::url('goals/'.$goal->image) }}" alt="">
 							</div>
 						</div>
 					</div>

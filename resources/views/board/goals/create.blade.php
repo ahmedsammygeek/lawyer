@@ -65,7 +65,7 @@
 						<div class="mb-3">
 							<label class="form-label required"> المحتوى المحتوى بالعربيه </label>
 							<div>
-								<textarea  class="form-control @error('content_ar') is-invalid @enderror " name='content_ar'  cols="30" rows="10"> {{ old('content_ar') }} </textarea>
+								<textarea  class="form-control @error('content_ar') is-invalid @enderror " name='content_ar'  cols="30" rows="3"> {{ old('content_ar') }} </textarea>
 								@error('content_ar')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
@@ -85,7 +85,7 @@
 						<div class="mb-3">
 							<label class="form-label required"> المحتوى المحتوى بالانجليزيه </label>
 							<div>
-								<textarea  class="form-control @error('content_en') is-invalid @enderror " name='content_en'  cols="30" rows="10"> {{ old('content_en') }} </textarea>
+								<textarea  class="form-control @error('content_en') is-invalid @enderror " name='content_en'  cols="30" rows="3"> {{ old('content_en') }} </textarea>
 								@error('content_en')
 								<small class="form-hint text-danger"> {{ $message }} </small>
 								@enderror
@@ -117,7 +117,7 @@
 </div>
 @endsection
 
-@section('scripts')
+{{-- @section('scripts')
 <script src="{{ asset('board_assets/dist/libs/tinymce/tinymce.min.js?1684106062') }}" defer></script>
 
 <script>
@@ -147,6 +147,5 @@
 		}
 		tinyMCE.init(options);
 	})
-      // @formatter:on
 </script>
-@endsection
+@endsection --}}
