@@ -85,7 +85,7 @@ class TopicController extends Controller
         $topic->setTranslation('content' , 'en' , $request->content_en );
         $topic->category_id = $request->category_id;
         $topic->is_active = $request->filled('is_active') ? 1 : 0;
-        if ($request->filled('image')) {
+        if ($request->hasFile('image')) {
             $topic->image = basename($request->file('image')->store('topics'));
         }
         $topic->save();
