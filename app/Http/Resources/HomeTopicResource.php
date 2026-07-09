@@ -18,7 +18,7 @@ class HomeTopicResource extends JsonResource
         return [
             'id' => $this->id , 
             'title' => $this->title , 
-            'content' =>   Str::squish(html_entity_decode($strip_tags($this->content))) , 
+            'content' =>   Str::squish(html_entity_decode(strip_tags($this->content))) , 
             'image' => Storage::url('topics/'.$this->image) , 
             'category' => new CategoryResource($this->category) , 
         ];
