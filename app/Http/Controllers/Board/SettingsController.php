@@ -33,7 +33,7 @@ class SettingsController extends Controller
         $settings->setTranslation('about' , 'en' , $request->about_en );
 
         $settings->setTranslation('working_hours' , 'ar' , $request->working_hours_ar );
-        $settings->setTranslation('working_hours' , 'en' , $request->working_hours_ar );
+        $settings->setTranslation('working_hours' , 'en' , $request->working_hours_en );
 
         $settings->email = $request->email;
         $settings->mobile = $request->mobile;
