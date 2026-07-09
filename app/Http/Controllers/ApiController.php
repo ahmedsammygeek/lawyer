@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Setting , Slide , Category , About , Topic , CaseStep , Goal , Service};
-use App\Http\Resources\{SettingResource , SlideResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource};
+use App\Http\Resources\{SettingResource , SlideResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource};
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
@@ -26,7 +26,7 @@ class ApiController extends Controller
             'case_steps' => CaseStepResource::collection($steps) , 
             'case_steps' => CaseStepResource::collection($steps) , 
             'goals' => GoalResource::collection($goals) , 
-            'topics' => TopicResource::collection($topics) , 
+            'topics' => HomeTopicResource::collection($topics) , 
             'slide' => new SlideResource($slide) , 
             'informations' =>  new SettingResource($information) , 
         ], 200);
