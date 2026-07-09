@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Storage;
+use Str;
 class HomeTopicResource extends JsonResource
 {
     /**
@@ -17,7 +18,7 @@ class HomeTopicResource extends JsonResource
         return [
             'id' => $this->id , 
             'title' => $this->title , 
-            'content' => strip_tags($this->content) , 
+            'content' =>   Str::squish(html_entity_decode($strip_tags($this->content))) , 
             'image' => Storage::url('topics/'.$this->image) , 
             'category' => new CategoryResource($this->category) , 
         ];
