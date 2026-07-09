@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Setting , Slide , Category , About , Topic , CaseStep , Goal , Service};
-use App\Http\Resources\{SettingResource , SlideResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource};
+use App\Http\Resources\{SettingResource , SlideResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource };
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
