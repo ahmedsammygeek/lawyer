@@ -53,7 +53,7 @@ class ApiController extends Controller
         $information = Setting::first();
 
         return response()->json([
-            'topics' =>  TopicResource::collection($topics) , 
+            'topics' =>  HomeTopicResource::collection($topics) , 
             'categories' =>  CategoryResource::collection($categories) , 
             'informations' =>  new SettingResource($information) , 
         ], 200);
@@ -69,7 +69,7 @@ class ApiController extends Controller
 
         return response()->json([
             'topic' =>  new TopicResource($topic) , 
-            'related_topics' =>  TopicResource::collection($topics) , 
+            'related_topics' =>  HomeTopicResource::collection($topics) , 
             'categories' =>  CategoryResource::collection($categories) , 
             'informations' =>  new SettingResource($information) , 
         ], 200);
