@@ -13,7 +13,7 @@
 			<div class="col-12">
 				<div class="row row-cards">
 
-					<div class="col-sm-6 col-lg-2">
+					<div class="col-sm-6 col-lg-3">
 						<div class="card card-sm">
 							<div class="card-body">
 								<div class="row align-items-center">
@@ -42,7 +42,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-6 col-lg-2">
+					<div class="col-sm-6 col-lg-3">
 						<div class="card card-sm">
 							<div class="card-body">
 								<div class="row align-items-center">
@@ -71,7 +71,7 @@
 						</div>
 					</div>
 			
-					<div class="col-sm-6 col-lg-2">
+					<div class="col-sm-6 col-lg-3">
 						<div class="card card-sm">
 							<div class="card-body">
 								<div class="row align-items-center">
@@ -92,10 +92,42 @@
 									</div>
 									<div class="col">
 										<div class="font-weight-medium">
-											{{ $products_count }}
+											{{ $topics_count }}
 										</div>
 										<div class="text-muted">
-											منتج مضاف
+											مقال مضاف
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-lg-3">
+						<div class="card card-sm">
+							<div class="card-body">
+								<div class="row align-items-center">
+									<div class="col-auto">
+										<span class="bg-twitter text-white avatar">
+											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+												<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+												<path d="M3 21l18 0"></path>
+												<path d="M3 10l18 0"></path>
+												<path d="M5 6l7 -3l7 3"></path>
+												<path d="M4 10l0 11"></path>
+												<path d="M20 10l0 11"></path>
+												<path d="M8 14l0 3"></path>
+												<path d="M12 14l0 3"></path>
+												<path d="M16 14l0 3"></path>
+											</svg>
+										</span>
+									</div>
+									<div class="col">
+										<div class="font-weight-medium">
+											{{ $services_count }}
+										</div>
+										<div class="text-muted">
+											خدمه مضاف
 										</div>
 									</div>
 								</div>
@@ -115,7 +147,7 @@
 						<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">
 							<li class="nav-item">
 								<a href="#tabs-home-7" class="nav-link active " data-bs-toggle="tab">
-									<span> المنتجات الاكثر مشاهده </span>
+									<span> المقالات الاكثر مشاهده </span>
 									<span class="badge bg-blue text-blue-fg ms-2   ">10</span>
 								</a>
 							</li>
@@ -136,14 +168,14 @@
 											</tr>
 										</thead>
 										<tbody>
-											@foreach ($most_viewd_products as $most_viewd_product)
+											@foreach ($most_viewd_topics as $most_viewd_topic)
 											<tr>
-												<td> {{ $most_viewd_product->name }} </td>
+												<td> {{ $most_viewd_topic->title }} </td>
 												<td class="text-secondary">
-													{{ $most_viewd_product->views_count }}
+													{{ $most_viewd_topic->views_count }}
 												</td>
 												<td>
-													<a href="{{ route('board.products.show' , $most_viewd_product ) }}"> شاهد </a>
+													<a href="{{ route('board.topics.show' , $most_viewd_topic ) }}"> شاهد </a>
 												</td>
 											</tr>
 											@endforeach

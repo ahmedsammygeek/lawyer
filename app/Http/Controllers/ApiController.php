@@ -67,6 +67,10 @@ class ApiController extends Controller
         $topics = Topic::where('id' , '!=' , $topic->id )->inRandomOrder()->limit(5)->get();
         $information = Setting::first();
 
+
+        $topic->views_count = $topic->views_count + 1;
+        $topic->save();
+
         return response()->json([
             'topic' =>  new TopicResource($topic) , 
             'related_topics' =>  HomeTopicResource::collection($topics) , 

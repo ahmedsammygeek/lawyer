@@ -25,14 +25,15 @@ class BoardController extends Controller
      */
     public function index()
     {
-        $products_count = Product::count();
+        $topics_count = Topic::count();
         $categories_count = Category::count();
+        $services_count = Service::count();
         $admins_count = User::count();
-        $most_viewd_products = Product::orderBy('views_count' , 'DESC' )->take(10)->get();
+        $most_viewd_topics = Topic::orderBy('views_count' , 'DESC' )->take(10)->get();
 
  
 
-        return view('board.index' , compact(  'products_count' ,  'categories_count' , 'admins_count'  , 'most_viewd_products') );
+        return view('board.index' , compact(  'topics_count' , 'services_count' ,  'categories_count' , 'admins_count'  , 'most_viewd_topics') );
     }
 
     public function logout() {
