@@ -19,14 +19,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<span class="bg-primary text-white avatar">
-											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-armchair-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-												<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-												<path d="M5 10v-4a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v4"></path>
-												<path d="M16 15v-2a3 3 0 1 1 3 3v3h-14v-3a3 3 0 1 1 3 -3v2"></path>
-												<path d="M8 12h8"></path>
-												<path d="M7 19v2"></path>
-												<path d="M17 19v2"></path>
-											</svg>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
 										</span>
 									</div>
 									<div class="col">
@@ -48,14 +41,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<span class="bg-primary text-white avatar">
-											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-armchair-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-												<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-												<path d="M5 10v-4a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v4"></path>
-												<path d="M16 15v-2a3 3 0 1 1 3 3v3h-14v-3a3 3 0 1 1 3 -3v2"></path>
-												<path d="M8 12h8"></path>
-												<path d="M7 19v2"></path>
-												<path d="M17 19v2"></path>
-											</svg>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chart-pie-2"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3v9h9" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg>
 										</span>
 									</div>
 									<div class="col">
@@ -77,17 +63,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<span class="bg-twitter text-white avatar">
-											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-												<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-												<path d="M3 21l18 0"></path>
-												<path d="M3 10l18 0"></path>
-												<path d="M5 6l7 -3l7 3"></path>
-												<path d="M4 10l0 11"></path>
-												<path d="M20 10l0 11"></path>
-												<path d="M8 14l0 3"></path>
-												<path d="M12 14l0 3"></path>
-												<path d="M16 14l0 3"></path>
-											</svg>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
 										</span>
 									</div>
 									<div class="col">
@@ -109,17 +85,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<span class="bg-twitter text-white avatar">
-											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-												<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-												<path d="M3 21l18 0"></path>
-												<path d="M3 10l18 0"></path>
-												<path d="M5 6l7 -3l7 3"></path>
-												<path d="M4 10l0 11"></path>
-												<path d="M20 10l0 11"></path>
-												<path d="M8 14l0 3"></path>
-												<path d="M12 14l0 3"></path>
-												<path d="M16 14l0 3"></path>
-											</svg>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-server-bolt"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" /><path d="M15 20h-9a3 3 0 0 1 -3 -3v-2a3 3 0 0 1 3 -3h12" /><path d="M7 8v.01" /><path d="M7 16v.01" /><path d="M20 15l-2 3h3l-2 3" /></svg>
 										</span>
 									</div>
 									<div class="col">
