@@ -138,10 +138,11 @@
 											@foreach ($most_viewd_topics as $most_viewd_topic)
 											<tr>
 												<td> {{ $most_viewd_topic->title }} </td>
-												<td class="text-secondary">
-													{{ $most_viewd_topic->views_count }}
+												<td >
+													{{ $most_viewd_topic->views_count }}  
+													<span class="text-muted"> مشاهده </span>
 												</td>
-												<td class="text-secondary">
+												<td >
 													{{ $most_viewd_topic->created_at }} - <span class="text-muted"> {{ $most_viewd_topic->created_at->diffForHumans() }} </span>
 												</td>
 												<td>
