@@ -53,7 +53,7 @@ switch (request()->segment(2)) {
     </button>
     <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
       <a href="{{ route('board.index') }}">
-        <img src="./static/logo.svg" width="110" height="32" alt="لوحه التحكم" class="navbar-brand-image">
+        <img src="{{ asset('board_assets/static/logo.svg') }}" width="110" height="32" alt="لوحه التحكم" class="navbar-brand-image">
       </a>
     </h1>
     <div class="navbar-nav flex-row order-md-last">
@@ -80,6 +80,7 @@ switch (request()->segment(2)) {
       </div>
     </a>
     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+      <a href="https://alilaw.ae/ar" target="_blank" class="dropdown-item"> زياره الموقع </a>
       <a href="{{ route('board.profile.show') }}" class="dropdown-item"> الملف الشخصى </a>
       <a href="{{ route('board.password.show') }}" class="dropdown-item">تعديل كلمه المرور</a>
       <div class="dropdown-divider"></div>
