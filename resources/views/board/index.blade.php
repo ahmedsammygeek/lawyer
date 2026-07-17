@@ -128,8 +128,9 @@
 									<table class="table table-vcenter card-table">
 										<thead>
 											<tr>
-												<th> اسم الخدمه </th>
-												<th> عدد مرات المشاهده </th>
+												<th> عنوان المقال  </th>
+												<th> عدد المشاهدات </th>
+												<th> تاريخ الاضافه </th>
 												<th class="w-1"></th>
 											</tr>
 										</thead>
@@ -139,6 +140,9 @@
 												<td> {{ $most_viewd_topic->title }} </td>
 												<td class="text-secondary">
 													{{ $most_viewd_topic->views_count }}
+												</td>
+												<td class="text-secondary">
+													{{ $most_viewd_topic->created_at }} - <span class="text-muted"> {{ $most_viewd_topic->created_at->diffForHumans() }} </span>
 												</td>
 												<td>
 													<a href="{{ route('board.topics.show' , $most_viewd_topic ) }}"> شاهد </a>
