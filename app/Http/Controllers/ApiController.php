@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Setting , Slide , Category , About , Topic , CaseStep , Goal , Service};
-use App\Http\Resources\{SettingResource , SlideResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource };
+use App\Models\{Setting , Slide , PageSeo , Category , About , Topic , CaseStep , Goal , Service};
+use App\Http\Resources\{SettingResource , SlideResource , PageSeoResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource };
 
 use App\Http\Requests\Api\SendEmailRequest;
 class ApiController extends Controller
@@ -21,6 +21,8 @@ class ApiController extends Controller
         $information = Setting::first();
         $slide = Slide::first();
 
+        $page_seo = PageSeo::where('id', 1 )->first();
+
         return response()->json([
             'services' => ServiceResource::collection($services) , 
             'case_steps' => CaseStepResource::collection($steps) , 
@@ -29,6 +31,7 @@ class ApiController extends Controller
             'topics' => HomeTopicResource::collection($topics) , 
             'slide' => new SlideResource($slide) , 
             'informations' =>  new SettingResource($information) , 
+            'seo_details' => PageSeoResource::make($page_seo)
         ], 200);
     }  
 
@@ -38,10 +41,13 @@ class ApiController extends Controller
         $about = About::first();
         $information = Setting::first();
 
+        $page_seo = PageSeo::where('id', 2 )->first();
+
         return response()->json([
             'about' => new AboutResource($about),
             'goals' => GoalResource::collection($goals) , 
             'informations' =>  new SettingResource($information) , 
+            'seo_details' => PageSeoResource::make($page_seo) , 
         ], 200);
     }
 
@@ -52,10 +58,14 @@ class ApiController extends Controller
         $topics = Topic::get();
         $information = Setting::first();
 
+        $page_seo = PageSeo::where('id', 3 )->first();
+
         return response()->json([
             'topics' =>  HomeTopicResource::collection($topics) , 
             'categories' =>  CategoryResource::collection($categories) , 
             'informations' =>  new SettingResource($information) , 
+            'seo_details' => PageSeoResource::make($page_seo),
+
         ], 200);
 
     }
@@ -71,11 +81,14 @@ class ApiController extends Controller
         $topic->views_count = $topic->views_count + 1;
         $topic->save();
 
+        $page_seo = PageSeo::where('id', 3 )->first();
+
         return response()->json([
             'topic' =>  new TopicResource($topic) , 
             'related_topics' =>  HomeTopicResource::collection($topics) , 
             'categories' =>  CategoryResource::collection($categories) , 
             'informations' =>  new SettingResource($information) , 
+            'seo_details' => PageSeoResource::make($page_seo),
         ], 200);
 
     }
@@ -84,8 +97,10 @@ class ApiController extends Controller
     public function contact_us(Request $request )
     {
         $information = Setting::first();
+        $page_seo = PageSeo::where('id', 4 )->first();
         return response()->json([
             'informations' =>  new SettingResource($information) , 
+            'seo_details' => PageSeoResource::make($page_seo),
         ], 200);
     }
 
@@ -94,5 +109,5 @@ class ApiController extends Controller
         return response()->json( ['message' => 'تم استقبال رسالتك بنجاح'] ,  200);
     }
 
-   
+
 }

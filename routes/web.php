@@ -23,6 +23,7 @@ use App\Http\Controllers\Board\CertificateController;
 use App\Http\Controllers\Board\ProjectReservationController;
 use App\Http\Controllers\Board\ProjectMessageController;
 use App\Http\Controllers\Board\CaseStepController;
+use App\Http\Controllers\Board\PageSeoController;
 
 Route::get('/' , function(){
 
@@ -53,8 +54,13 @@ Route::group(['prefix' => 'Board' , 'as' => 'board.' , 'middleware' => 'admin' ]
 	Route::resource('projects.reservations', ProjectReservationController::class );
 	Route::resource('projects.messages', ProjectMessageController::class );
 
+
 	Route::get('settings/edit'  , [SettingsController::class , 'edit'] )->name('settings.edit'); // done
 	Route::patch('settings'  , [SettingsController::class , 'update'] )->name('settings.update'); // done
+	Route::get('page_seo/edit'  , [PageSeoController::class , 'edit'] )->name('page_seo.edit'); // done
+	Route::patch('page_seo'  , [PageSeoController::class , 'update'] )->name('page_seo.update'); // done
+
+
 	Route::get('terms/edit'  , [TermsController::class , 'edit'] )->name('terms.edit');
 	Route::patch('terms'  , [TermsController::class , 'update'] )->name('terms.update');
 	Route::get('about/edit'  , [AboutController::class , 'edit'] )->name('about.edit');
