@@ -7,20 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class ContactUsMail extends Mailable
+class SendSiteEmail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $data;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($data)
+    public function __construct()
     {
-        $this->data = $data;
+        //
     }
 
     /**
@@ -29,11 +27,7 @@ class ContactUsMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('alishamsi309@gmail.com', $this->data['name'] ),
-            subject: 'رسال تواصل جديده من '.$this->data['name'] ,
-            replyTo: [
-                new Address($this->data['email'], 'Ali Saeed Al Shamsi'),
-            ],
+            subject: 'Send Site Email',
         );
     }
 
@@ -43,7 +37,7 @@ class ContactUsMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'contact_us_mail',
+            view: 'view.name',
         );
     }
 

@@ -7,6 +7,8 @@ use App\Models\{Setting , Slide , PageSeo , Category , About , Topic , CaseStep 
 use App\Http\Resources\{SettingResource , SlideResource , PageSeoResource  , AboutResource , GoalResource , CategoryResource  , CaseStepResource, TopicResource , ServiceResource , HomeTopicResource };
 
 use App\Http\Requests\Api\SendEmailRequest;
+
+use App\Mail\ContactUsMail;
 class ApiController extends Controller
 {
     /**
@@ -106,6 +108,7 @@ class ApiController extends Controller
 
     public function send_email(SendEmailRequest $request )
     {
+        Mail::to('alishamsi309@gmail.com')->send(new ContactUsMail());
         return response()->json( ['message' => 'تم استقبال رسالتك بنجاح'] ,  200);
     }
 
